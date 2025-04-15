@@ -1,7 +1,10 @@
 // src/App.tsx
 import { useState } from 'react';
 import useDonations from './hooks/useDonations';
-// Note: Vamos adicionar os imports dos componentes quando os criarmos
+import DonationForm from './componentes/DonationForm';
+import DonatorsRanking from './componentes/DonatorsRanking';
+import MovingBlocks from './componentes/MovingBlocks';
+import ThankYouMessage from './componentes/ThankYouMessage';
 
 function App() {
   // Estado para controlar o movimento dos blocos
@@ -39,18 +42,15 @@ function App() {
     <div className="container">
       <div className="left-panel">
         <h1>Faça sua Doação</h1>
-        {/* Adicione o componente DonationForm aqui quando criado */}
-        {/* <DonationForm onDonate={handleDonation} /> */}
+        <DonationForm onDonate={handleDonation} />
       </div>
       
       <div className="right-panel">
-        {/* Adicione os componentes quando criados */}
-        {/* <DonatorsRanking donators={donations} /> */}
-        {/* <MovingBlocks movementAmount={blockMovement} /> */}
+        <DonatorsRanking donators={donations} />
+        <MovingBlocks movementAmount={blockMovement} />
       </div>
       
-      {/* Adicione a mensagem de agradecimento quando criada */}
-      {/* {showThankYou && <ThankYouMessage />} */}
+      {showThankYou && <ThankYouMessage />}
     </div>
   );
 }
